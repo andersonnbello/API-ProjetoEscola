@@ -1,0 +1,325 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProjetoEscola.API</name>
+    </assembly>
+    <members>
+        <member name="M:ProjetoEscola.API.Controllers.AddressesController.GetAllAsync">
+            <summary>
+            Retorna todos os endereços em ordem alfabética.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.AddressesController.GetByIdAsync(System.Int32)">
+            <summary>
+            Retorna um endereço consultado pelo Id.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.AddressesController.CreateAsync(ProjetoEscola.Application.DTO_s.AddressDTO)">
+            <summary>
+            Insere um endereço.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.AddressesController.UpdateAsync(ProjetoEscola.Application.DTO_s.AddressDTO)">
+            <summary>
+            Altera um endereço.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.AddressesController.DeleteAsync(System.Int32)">
+            <summary>
+            Exclui um endereço pelo Id.
+            </summary>
+            <remarks>Ao excluir um endereço o mesmo será removido permanentemente da base.</remarks>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.CitysController.GetAllAsync">
+            <summary>
+            Retorna todas as cidades em ordem alfabética.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.CitysController.GetByIdAsync(System.Int32)">
+            <summary>
+            Retorna uma cidade consultada pelo Id.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.CitysController.CreateAsync(ProjetoEscola.Application.DTO_s.CityDTO)">
+            <summary>
+            Insere uma cidade.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.CitysController.UpdateAsync(ProjetoEscola.Application.DTO_s.CityDTO)">
+            <summary>
+            Atualiza uma cidade.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.CitysController.DeleteAsync(System.Int32)">
+            <summary>
+            Exclui uma cidade pelo Id.
+            </summary>
+            <remarks>Ao excluir uma cidade a mesma será removida permanentemente da base.</remarks>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.CountrysController.GetAllAsync">
+            <summary>
+            Retorna todos os países em ordem alfabética.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.CountrysController.GetByIdAsync(System.Int32)">
+            <summary>
+            Retorna um paíse consultado pelo Id.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.CountrysController.CreateAsync(ProjetoEscola.Application.DTO_s.CountryDTO)">
+            <summary>
+            Insere um país.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.CountrysController.UpdateAsync(ProjetoEscola.Application.DTO_s.CountryDTO)">
+            <summary>
+            Altera um país
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.CountrysController.DeleteAsync(System.Int32)">
+            <summary>
+            Exclui um país
+            </summary>
+            <remarks>Ao excluir um país o mesmo será removido permanentemente da base.</remarks>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.SeriesController.GetAllAsync">
+            <summary>
+            Retorna todas as séries em ordem alfabética.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.SeriesController.GetByIdAsync(System.Int32)">
+            <summary>
+            Retorna uma série consultada pelo Id.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.SeriesController.CreateAsync(ProjetoEscola.Application.DTO_s.SerieDTO)">
+            <summary>
+            Insere uma série.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.SeriesController.UpdateAsync(ProjetoEscola.Application.DTO_s.SerieDTO)">
+            <summary>
+            Altera uma série.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.SeriesController.DeleteAsync(System.Int32)">
+            <summary>
+            Exclui uma série.
+            </summary>
+            <remarks>Ao excluir uma série a mesma será removida permanentemente da base.</remarks>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StatesController.GetAllAsync">
+            <summary>
+            Retorna todos os estados em ordem alfabética.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StatesController.GetByIdAsync(System.Int32)">
+            <summary>
+            Retorna um estado consultado pelo Id.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StatesController.CreateAsync(ProjetoEscola.Application.DTO_s.StateDTO)">
+            <summary>
+            Insere um estado.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StatesController.UpdateAsync(ProjetoEscola.Application.DTO_s.StateDTO)">
+            <summary>
+            Altera um estado.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StatesController.DeleteAsync(System.Int32)">
+            <summary>
+            Exclui um estado.
+            </summary>
+            <remarks>Ao excluir um estado o mesmo será removido permanentemente da base.</remarks>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentAddressesController.GetAllAsync">
+            <summary>
+            Retorna todos os alunos, estados, países, endereços ordenados pelo Id.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentAddressesController.GetByIdAsync(System.Int32)">
+            <summary>
+            Retorna um aluno, estado, país e endereço consultado pelo Id.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentAddressesController.CreateAsync(ProjetoEscola.Application.DTO_s.StudentsAddressDTO)">
+            <summary>
+            Insere um aluno, estado, país e endereço.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentAddressesController.UpdateAsync(ProjetoEscola.Application.DTO_s.StudentsAddressDTO)">
+            <summary>
+            Altera um aluno, estado, país e endereço.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentAddressesController.DeleteAsync(System.Int32)">
+            <summary>
+            Exclui um aluno, estado, país e edereço.
+            </summary>
+            <remarks>Ao excluir esses registros os mesmos serão removidos permanentemente da base.</remarks>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentsController.GetAllAsync">
+            <summary>
+            Retorna todos os alunos em ordem alfabética.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentsController.GetByIdAsync(System.Int32)">
+            <summary>
+            Retorna um aluno consultado pelo Id.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentsController.GetByDocumentAsync(System.String)">
+            <summary>
+            Retorna um aluno consultado pelo documento.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentsController.CreateAsync(ProjetoEscola.Application.DTO_s.StudentsDTO)">
+            <summary>
+            Insere um aluno.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentsController.UpdateAsync(ProjetoEscola.Application.DTO_s.StudentsDTO)">
+            <summary>
+            Altera um aluno.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentsController.DeleteAsync(System.Int32)">
+            <summary>
+            Exclui um aluno.
+            </summary>
+            <remarks>Ao excluir um aluno o mesmo será removido permanentemente da base.</remarks>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentSeriesController.GetAllAsync">
+            <summary>
+            Retorna todos os alunos e séries.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentSeriesController.GetByIdAsync(System.Int32)">
+            <summary>
+            Retorna um aluno e série consultado pelo Id.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentSeriesController.CreateAsync(ProjetoEscola.Application.DTO_s.StudentSerieDTO)">
+            <summary>
+            Insere um aluno e série já existentes na base.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentSeriesController.DeleteAsync(System.Int32)">
+            <summary>
+            Exclui um aluno e série.
+            </summary>
+            <remarks>Ao excluir os registros os mesmos serão removidos permanentemente da base.</remarks>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentSeriesController.UpdateAsync(ProjetoEscola.Application.DTO_s.StudentSerieDTO)">
+            <summary>
+            Altera um aluno e série.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentSubjectsController.GetAllAsync">
+            <summary>
+            Retorna todas as matérias referente a um aluno.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentSubjectsController.GetByIdAsync(System.Int32)">
+            <summary>
+            Retorna uma matéria e um aluno consultado pelo Id.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentSubjectsController.CreateAsync(ProjetoEscola.Application.DTO_s.StudentsSubjectsDTO)">
+            <summary>
+            Insere uma matéria e um aluno já existentes na base.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentSubjectsController.DeleteAsync(System.Int32)">
+            <summary>
+            Exclui uma matéria e um aluno.
+            </summary>
+            <remarks>Ao excluir os registros os mesmos serão removidos permanentemente da base.</remarks>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentSubjectsController.UpdateAsync(ProjetoEscola.Application.DTO_s.StudentsSubjectsDTO)">
+            <summary>
+            Altera uma matéria e um aluno.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.SubjectsController.GetAllAsync">
+            <summary>
+            Retorna todas as matérias em ordem alfabética.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.SubjectsController.GetByIdAsync(System.Int32)">
+            <summary>
+            Retorna uma matéria consultada pelo Id.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.SubjectsController.CreateAsync(ProjetoEscola.Application.DTO_s.SubjectsDTO)">
+            <summary>
+            Insere uma matéria.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.SubjectsController.UpdateAsync(ProjetoEscola.Application.DTO_s.SubjectsDTO)">
+            <summary>
+            Altera uma matéria.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.SubjectsController.DeleteAsync(System.Int32)">
+            <summary>
+            Exclui uma matéria.
+            </summary>
+            <remarks>Ao excluir uma matéria a mesma será removida permanentemente da base.</remarks>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.TeachersController.GetAllAsync">
+            <summary>
+            Retorna todos os professores por oderm alfabética.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.TeachersController.CreateAsync(ProjetoEscola.Application.DTO_s.TeachersDTO)">
+            <summary>
+            Retorna um professore consultado pelo Id.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.TeachersController.UpdateAsync(ProjetoEscola.Application.DTO_s.TeachersDTO)">
+            <summary>
+            Insere um professor.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.TeachersController.DeleteAsync(System.Int32)">
+            <summary>
+            Exclui um professor.
+            </summary>
+            <remarks>Ao excluir um professor o mesmo será removido permanentemente da base.</remarks>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.TeachersController.GetByIdAsync(System.Int32)">
+            <summary>
+            Altera um professor.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.TeacherSubjectsController.GetAllAsync">
+            <summary>
+            Retorna todas as matérias pertencente a um professor.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.TeacherSubjectsController.GetByIdAsync(System.Int32)">
+            <summary>
+            Retorna uma matéria pertencente a um professor consultado pelo Id.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.TeacherSubjectsController.CreateAsync(ProjetoEscola.Application.DTO_s.TeachersSubjectsDTO)">
+            <summary>
+            Insere um professor e uma matéria ja existente na base.
+            </summary>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.TeacherSubjectsController.DeleteAsync(System.Int32)">
+            <summary>
+            Exclui um professor e uma matéria.
+            </summary>
+            <remarks>Ao excluir os registros os mesmos serão removidos permanentemente da base.</remarks>
+        </member>
+        <member name="M:ProjetoEscola.API.Controllers.TeacherSubjectsController.UpdateAsync(ProjetoEscola.Application.DTO_s.TeachersSubjectsDTO)">
+            <summary>
+            Altera um professor e uma matéria.
+            </summary>
+        </member>
+    </members>
+</doc>

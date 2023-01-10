@@ -1,0 +1,391 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.API\\ProjetoEscola.API.csproj": {}
+  },
+  "projects": {
+    "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.API\\ProjetoEscola.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.API\\ProjetoEscola.API.csproj",
+        "projectName": "ProjetoEscola.API",
+        "projectPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.API\\ProjetoEscola.API.csproj",
+        "packagesPath": "C:\\Users\\braga\\.nuget\\packages\\",
+        "outputPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\braga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.CrossCutting\\ProjetoEscola.CrossCutting.csproj": {
+                "projectPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.CrossCutting\\ProjetoEscola.CrossCutting.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Application\\ProjetoEscola.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Application\\ProjetoEscola.Application.csproj",
+        "projectName": "ProjetoEscola.Application",
+        "projectPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Application\\ProjetoEscola.Application.csproj",
+        "packagesPath": "C:\\Users\\braga\\.nuget\\packages\\",
+        "outputPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\braga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Data\\ProjetoEscola.Data.csproj": {
+                "projectPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Data\\ProjetoEscola.Data.csproj"
+              },
+              "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Domain\\ProjetoEscola.Domain.csproj": {
+                "projectPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Domain\\ProjetoEscola.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.CrossCutting\\ProjetoEscola.CrossCutting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.CrossCutting\\ProjetoEscola.CrossCutting.csproj",
+        "projectName": "ProjetoEscola.CrossCutting",
+        "projectPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.CrossCutting\\ProjetoEscola.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\braga\\.nuget\\packages\\",
+        "outputPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.CrossCutting\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\braga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Application\\ProjetoEscola.Application.csproj": {
+                "projectPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Application\\ProjetoEscola.Application.csproj"
+              },
+              "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Data\\ProjetoEscola.Data.csproj": {
+                "projectPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Data\\ProjetoEscola.Data.csproj"
+              },
+              "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Domain\\ProjetoEscola.Domain.csproj": {
+                "projectPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Domain\\ProjetoEscola.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Data\\ProjetoEscola.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Data\\ProjetoEscola.Data.csproj",
+        "projectName": "ProjetoEscola.Data",
+        "projectPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Data\\ProjetoEscola.Data.csproj",
+        "packagesPath": "C:\\Users\\braga\\.nuget\\packages\\",
+        "outputPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\braga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Domain\\ProjetoEscola.Domain.csproj": {
+                "projectPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Domain\\ProjetoEscola.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Domain\\ProjetoEscola.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Domain\\ProjetoEscola.Domain.csproj",
+        "projectName": "ProjetoEscola.Domain",
+        "projectPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Domain\\ProjetoEscola.Domain.csproj",
+        "packagesPath": "C:\\Users\\braga\\.nuget\\packages\\",
+        "outputPath": "E:\\Projetos\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\braga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
