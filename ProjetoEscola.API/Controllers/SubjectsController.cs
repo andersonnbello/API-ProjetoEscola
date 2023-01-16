@@ -110,7 +110,7 @@ namespace ProjetoEscola.API.Controllers
         [HttpDelete]
         public async Task<ActionResult> DeleteAsync(int id)
         {
-            await _unitOfWork.BeginTransactionAsync ();
+            await _unitOfWork.BeginTransactionAsync();
             try
             {
                 var studentSuject = await _studentsSubjectsService.GetBySubjectIdAsync(id);
@@ -125,15 +125,11 @@ namespace ProjetoEscola.API.Controllers
                     await _teacherSubjectService.DeleteAsync(teacherSubject.Data.Id);
                 }
 
-                var subject = await _subjectService.GetByIdAsync(id);
-                if (subject.Data != null)
-                {
-                    await _subjectService.DeleteAsync(id);
-                }
+                var result = await _subjectService.DeleteAsync(id);
 
                 await _unitOfWork.CommitAsync();
 
-                return Ok(subject);
+                return Ok(result);
             }
             catch (Exception ex)
             {
