@@ -11,6 +11,7 @@ namespace ProjetoEscola.Application.Services.Interfaces
         Task<ResultService> UpdateAsync(StudentsSubjectsDTO studentsSubjectsDTO);
         Task<ResultService<StudentsSubjectsDTO>> GetByIdAsync(int id);
         Task<ResultService<StudentsSubjectsDTO>> GetByStudentIdAsync(int id);
+        Task<ResultService<StudentsSubjectsDTO>> GetBySubjectIdAsync(int id);
         Task<ResultService> DeleteAsync(int id);
     }
 }

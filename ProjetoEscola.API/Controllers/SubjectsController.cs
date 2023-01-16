@@ -9,10 +9,15 @@ namespace ProjetoEscola.API.Controllers
     public class SubjectsController : ControllerBase
     {
         private readonly ISubjectService _subjectService;
+        private readonly IStudentsSubjectsService _studentsSubjectsService;
+        private readonly ITeacherSubjectService _teacherSubjectService;
 
-        public SubjectsController(ISubjectService subjectService)
+
+        public SubjectsController(ISubjectService subjectService, IStudentsSubjectsService studentsSubjectsService, ITeacherSubjectService teacherSubjectService)
         {
             _subjectService = subjectService;
+            _studentsSubjectsService = studentsSubjectsService;
+            _teacherSubjectService = teacherSubjectService;
         }
 
         /// <summary>
@@ -104,9 +109,13 @@ namespace ProjetoEscola.API.Controllers
         {
             try
             {
+                var studentSuject = await _studentsSubjectsService.GetBySubjectIdAsync(id);
+                if(studentSuject.Data != null)
+                {
+                    await _studentsSubjectsService.DeleteAsync(studentSuject.Data.Id);
+                }
+
                 var result = await _subjectService.DeleteAsync(id);
-                if (result.IsSuccess)
-                    return Ok(result);
 
                 return BadRequest(result);
             }

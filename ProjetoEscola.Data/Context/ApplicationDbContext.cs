@@ -28,7 +28,7 @@ namespace ProjetoEscola.Data.Context
             #region ADDRESS
 
             modelBuilder.Entity<Address>()
-                .ToTable("Adresses");
+                .ToTable("Addresses");
 
             modelBuilder.Entity<Address>()
                 .HasKey(x => x.Id);

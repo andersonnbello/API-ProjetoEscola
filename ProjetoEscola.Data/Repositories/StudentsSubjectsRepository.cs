@@ -76,6 +76,16 @@ namespace ProjetoEscola.Data.Repositories
             return studentSubject;
         }
 
+        public async Task<StudentSubject> GetBySubjectIdAsync(int id)
+        {
+            StudentSubject studentSubject = null;
+            Expression<Func<StudentSubject, bool>> expressionFiltro = (x => x.SubjectId == id);
+
+            studentSubject = await _repositoryBase.Select(expressionFiltro).FirstOrDefaultAsync();
+
+            return studentSubject;
+        }
+
         public StudentSubject UpdateAsync(StudentSubject studentSubject)
         {
             _repositoryBase.Update(studentSubject);

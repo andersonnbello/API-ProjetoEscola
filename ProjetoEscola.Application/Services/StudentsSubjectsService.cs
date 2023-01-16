@@ -86,6 +86,15 @@ namespace ProjetoEscola.Application.Services
             return ResultService.Ok<StudentsSubjectsDTO>(_mapper.Map<StudentsSubjectsDTO>(list));
         }
 
+        public async Task<ResultService<StudentsSubjectsDTO>> GetBySubjectIdAsync(int id)
+        {
+            var list = await _studentsSubjectsRepository.GetBySubjectIdAsync(id);
+            if (list == null)
+                return ResultService.Fail<StudentsSubjectsDTO>("Nenhum registro foi encontrado!");
+
+            return ResultService.Ok<StudentsSubjectsDTO>(_mapper.Map<StudentsSubjectsDTO>(list));
+        }
+
         public async Task<ResultService> UpdateAsync(StudentsSubjectsDTO studentsSubjectsDTO)
         {
 

@@ -10,6 +10,7 @@ namespace ProjetoEscola.Domain.Interface
         Task<IEnumerable<StudentSubject>> GetAllAsync(int id);
         Task<StudentSubject> GetByIdAsync(int id);
         Task<StudentSubject> GetByStudentIdAsync(int id);
+        Task<StudentSubject> GetBySubjectIdAsync(int id);
         Task DeleteAsync(StudentSubject studentSubject);
     }
 }
