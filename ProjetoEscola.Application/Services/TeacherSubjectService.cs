@@ -119,5 +119,14 @@ namespace ProjetoEscola.Application.Services
 
             return ResultService.Ok("Registro atualizado com sucesso!");
         }
+
+        public async Task<ResultService<TeachersSubjectsDTO>> GetBySubjectIdAsync(int id)
+        {
+            var response = await _teacherSubjectRepository.GetBySubjectIdAsync(id);
+            if (response == null)
+                return ResultService.Fail<TeachersSubjectsDTO>("Registro não encontrado!");
+
+            return ResultService.Ok<TeachersSubjectsDTO>(_mapper.Map<TeachersSubjectsDTO>(response));
+        }
     }
 }

@@ -14,17 +14,17 @@ namespace ProjetoEscola.Data.Repositories
             _context = context;
         }
 
-        public async Task BeginTransaction()
+        public async Task BeginTransactionAsync()
         {
             _transaction = await _context.Database.BeginTransactionAsync();
         }
 
-        public async Task Commit()
+        public async Task CommitAsync()
         {
             await _transaction.CommitAsync();
         }
 
-        public async Task Rollback()
+        public async Task RollbackAsync()
         {
             await _transaction.RollbackAsync();
         }

@@ -8,6 +8,7 @@ namespace ProjetoEscola.Domain.Interface
         TeacherSubject CreateAsync(TeacherSubject teacherSubject);
         TeacherSubject UpdateAsync(TeacherSubject teacherSubject);
         Task<TeacherSubject> GetByIdAsync(int id);
+        Task<TeacherSubject> GetBySubjectIdAsync(int id);
         Task DeleteAsync(TeacherSubject teacherSubject);
     }
 }

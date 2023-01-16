@@ -136,7 +136,7 @@ namespace ProjetoEscola.API.Controllers
         {
             try
             {
-                await _unitOfWork.BeginTransaction();
+                await _unitOfWork.BeginTransactionAsync();
 
                 var studentSerie = await _studentSerieService.GetByStudentIdAsync(id);
                 if (studentSerie.Data != null)
@@ -161,13 +161,13 @@ namespace ProjetoEscola.API.Controllers
 
                 var result = await _studentsService.DeleteAsync(id);
 
-                await _unitOfWork.Commit();
+                await _unitOfWork.CommitAsync();
 
                 return Ok(result);
             }
             catch (Exception ex)
             {
-                await _unitOfWork.Rollback();
+                await _unitOfWork.RollbackAsync();
                 throw new Exception(ex.Message);
             }
         }

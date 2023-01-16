@@ -19,7 +19,6 @@ namespace ProjetoEscola.Data.Repositories
             _repositoryBase = new RepositoryBase<TeacherSubject>(_context);
         }
 
-
         public async Task<IEnumerable<TeacherSubject>> GetAllAsync()
         {
             List<TeacherSubject> listTeahcerSubject = new List<TeacherSubject>();
@@ -66,6 +65,17 @@ namespace ProjetoEscola.Data.Repositories
             {
                 _repositoryBase.Delete(teacherSubject);
             }
+        }
+
+        public async Task<TeacherSubject> GetBySubjectIdAsync(int id)
+        {
+            TeacherSubject teacherSubject = null;
+            string[] includes = new string[] { "Subjects", "Teachers" };
+            Expression<Func<TeacherSubject, bool>> expressionFiltro = (x => x.SubjectsId == id);
+
+            teacherSubject = await _repositoryBase.Select(expressionFiltro, includes).FirstOrDefaultAsync();
+
+            return teacherSubject;
         }
     }
 }
