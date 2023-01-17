@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoEscola.Application.DTO_s;
 using ProjetoEscola.Application.Services.Interfaces;
+using ProjetoEscola.Domain.Interface;
 
 namespace ProjetoEscola.API.Controllers
 {

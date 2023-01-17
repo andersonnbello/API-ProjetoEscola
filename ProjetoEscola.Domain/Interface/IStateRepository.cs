@@ -6,8 +6,9 @@ namespace ProjetoEscola.Domain.Interface
     {
         State CreateAsync(State state);
         State UpdateAsync(State state);
+        Task DeleteAsync(State state);
+
         Task<State> GetById(int id);
         Task<IEnumerable<State>> GetAllAsync();
-        Task DeleteAsync(State state);
     }
 }

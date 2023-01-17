@@ -6,9 +6,10 @@ namespace ProjetoEscola.Domain.Interface
     {
         StudentAddress CreateAsync(StudentAddress studentsAddress);
         StudentAddress UpdateAsync(StudentAddress studentsAddress);
+        Task DeleteAsync(StudentAddress studentsAddress);
+
+        Task<StudentAddress> GetByStudentIdAsync(int id);
         Task<List<StudentAddress>> GetAllAsync();
         Task<StudentAddress> GetByIdAsync(int id);
-        Task<StudentAddress> GetByStudentIdAsync(int id);
-        Task DeleteAsync(StudentAddress studentsAddress);
     }
 }

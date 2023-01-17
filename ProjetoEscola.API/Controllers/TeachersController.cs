@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoEscola.Application.DTO_s;
 using ProjetoEscola.Application.Services.Interfaces;
+using ProjetoEscola.Domain.Interface;
 
 namespace ProjetoEscola.API.Controllers
 {
@@ -9,10 +10,14 @@ namespace ProjetoEscola.API.Controllers
     public class TeachersController : ControllerBase
     {
         private readonly ITeacherService _teacherService;
+        private readonly ITeacherSubjectService _teacherSubjectService;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public TeachersController(ITeacherService teacherService)
+        public TeachersController(ITeacherService teacherService, ITeacherSubjectService teachersubjectService, IUnitOfWork unitOfWork)
         {
             _teacherService = teacherService;
+            _teacherSubjectService = teachersubjectService;
+            _unitOfWork = unitOfWork;
         }
 
         /// <summary>
@@ -82,16 +87,24 @@ namespace ProjetoEscola.API.Controllers
         [HttpDelete]
         public async Task<ActionResult> DeleteAsync(int id)
         {
+            await _unitOfWork.BeginTransactionAsync();
             try
             {
-                var result = await _teacherService.DeleteAsync(id);
-                if (result.IsSuccess)
-                    return Ok(result);
+                var teacherSubject = await _teacherSubjectService.GetByTeacherIdAsync(id);
+                if(teacherSubject.Data != null)
+                {
+                    await _teacherSubjectService.DeleteAsync(teacherSubject.Data.Id);
+                }
 
-                return BadRequest(result);
+                var result = await _teacherService.DeleteAsync(id);
+
+                await _unitOfWork.CommitAsync();
+
+                return Ok(result);
             }
             catch (Exception ex)
             {
+                await _unitOfWork.RollbackAsync();
                 throw new Exception(ex.Message);
             }
         }

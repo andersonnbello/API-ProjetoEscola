@@ -77,5 +77,16 @@ namespace ProjetoEscola.Data.Repositories
 
             return teacherSubject;
         }
+
+        public async Task<TeacherSubject> GetByTeacherIdAsync(int id)
+        {
+            TeacherSubject teacherSubject = null;
+            string[] includes = new string[] { "Subjects", "Teachers" };
+            Expression<Func<TeacherSubject, bool>> expressionFiltro = (x => x.SubjectsId == id);
+
+            teacherSubject = await _repositoryBase.Select(expressionFiltro, includes).FirstOrDefaultAsync();
+
+            return teacherSubject;
+        }
     }
 }

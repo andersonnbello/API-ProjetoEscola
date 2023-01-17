@@ -6,8 +6,9 @@ namespace ProjetoEscola.Domain.Interface
     {
         Country CreateAsync(Country country);
         Country UpdateAsync(Country country);
+        Task DeleteAsync(Country country);
+
         Task<Country> GetById(int id);
         Task<IEnumerable<Country>> GetAllAsync();
-        Task DeleteAsync(Country country);
     }
 }

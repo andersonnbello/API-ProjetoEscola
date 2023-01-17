@@ -6,8 +6,9 @@ namespace ProjetoEscola.Domain.Interface
     {
         Subject CreateAsync(Subject subject);
         Subject UpdateAsync(Subject subject);
+        Task DeleteAsync(Subject subject);
+
         Task<Subject> GetById(int id);
         Task<IEnumerable<Subject>> GetAllAsync();
-        Task DeleteAsync(Subject subject);
     }
 }

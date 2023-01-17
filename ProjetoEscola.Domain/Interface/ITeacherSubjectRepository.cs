@@ -4,11 +4,13 @@ namespace ProjetoEscola.Domain.Interface
 {
     public interface ITeacherSubjectRepository
     {
-        Task<IEnumerable<TeacherSubject>> GetAllAsync();
         TeacherSubject CreateAsync(TeacherSubject teacherSubject);
         TeacherSubject UpdateAsync(TeacherSubject teacherSubject);
+        Task DeleteAsync(TeacherSubject teacherSubject);
+
+        Task<IEnumerable<TeacherSubject>> GetAllAsync();
         Task<TeacherSubject> GetByIdAsync(int id);
         Task<TeacherSubject> GetBySubjectIdAsync(int id);
-        Task DeleteAsync(TeacherSubject teacherSubject);
+        Task<TeacherSubject> GetByTeacherIdAsync(int id);
     }
 }

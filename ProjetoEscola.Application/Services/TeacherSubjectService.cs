@@ -128,5 +128,14 @@ namespace ProjetoEscola.Application.Services
 
             return ResultService.Ok<TeachersSubjectsDTO>(_mapper.Map<TeachersSubjectsDTO>(response));
         }
+
+        public async Task<ResultService<TeachersSubjectsDTO>> GetByTeacherIdAsync(int id)
+        {
+            var response = await _teacherSubjectRepository.GetByTeacherIdAsync(id);
+            if (response == null)
+                return ResultService.Fail<TeachersSubjectsDTO>("Registro não encontrado!");
+
+            return ResultService.Ok<TeachersSubjectsDTO>(_mapper.Map<TeachersSubjectsDTO>(response));
+        }
     }
 }

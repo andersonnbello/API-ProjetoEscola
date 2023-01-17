@@ -6,8 +6,10 @@ namespace ProjetoEscola.Domain.Interface
     {
         Student CreateAsync(Student students);
         Student UpdateAsync(Student students);
-        Task<IEnumerable<Student>> GetAllAsync();
         Task DeleteAsync(Student students);
+
+        Task<IEnumerable<Student>> GetAllAsync();
+
         Task<Student> GetByIdAsync(int id);
         Task<Student> GetByCPFAsync(string cpf);
         Task<Student> GetByRGAsync(string rg);
