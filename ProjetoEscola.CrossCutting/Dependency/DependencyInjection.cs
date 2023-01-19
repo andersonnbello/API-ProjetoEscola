@@ -58,7 +58,6 @@ namespace ProjetoEscola.CrossCutting.Dependency
 
             services.AddAutoMapper(typeof(DomainToDtoMapping));
 
-
             return services;
         }
     }

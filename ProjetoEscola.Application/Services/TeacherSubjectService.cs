@@ -81,7 +81,7 @@ namespace ProjetoEscola.Application.Services
             if (response == null)
                 return ResultService.Fail("Registro não encontrado!");
 
-            var teacher = await _teacherRepository.GetByIdAsync(teachersSubjectsDTO.TeachersId);
+            var teacher = await _teacherRepository.GetByIdAsync(teachersSubjectsDTO.TeacherId);
             if(teacher == null)
             {
                 return ResultService.Fail<TeachersDTO>("Não conseguimos atualizar, pois o professor(a) informado não existe!");
@@ -97,7 +97,7 @@ namespace ProjetoEscola.Application.Services
                 response.Teachers.UpdatAt = teacher.UpdatAt;
             }
 
-            var subjet = await _subjectRepository.GetById(teachersSubjectsDTO.SubjectsId);
+            var subjet = await _subjectRepository.GetById(teachersSubjectsDTO.SubjectId);
             if (subjet == null)
             {
                 return ResultService.Fail<TeachersDTO>("Não conseguimos atualizar, pois a máteria informada não existe!");

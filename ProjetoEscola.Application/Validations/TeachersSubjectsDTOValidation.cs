@@ -7,11 +7,11 @@ namespace ProjetoEscola.Application.Validations
     {
         public TeachersSubjectsDTOValidation()
         {
-            RuleFor(x => x.TeachersId)
+            RuleFor(x => x.TeacherId)
                 .NotNull()
                 .NotEmpty();
 
-            RuleFor(x => x.SubjectsId)
+            RuleFor(x => x.SubjectId)
                 .NotNull()
                 .NotEmpty();
         }

@@ -8,6 +8,8 @@ namespace ProjetoEscola.Domain.Entities
         [Key]
         public int Id { get; set; }
 
+        [Required]
+        [StringLength(10)]
         public string Name { get; set; }
 
         public ICollection<StudentSerie> StudentsSeries { get; set; } = new List<StudentSerie>();

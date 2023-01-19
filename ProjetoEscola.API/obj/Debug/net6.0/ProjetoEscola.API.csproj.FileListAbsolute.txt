@@ -159,3 +159,8 @@ E:\Projetos\ProjetoEscola\ProjetoEscola\ProjetoEscola.API\obj\Debug\net6.0\Proje
 E:\Projetos\ProjetoEscola\ProjetoEscola\ProjetoEscola.API\obj\Debug\net6.0\ProjetoEscola.API.pdb
 E:\Projetos\ProjetoEscola\ProjetoEscola\ProjetoEscola.API\obj\Debug\net6.0\ProjetoEscola.API.genruntimeconfig.cache
 E:\Projetos\ProjetoEscola\ProjetoEscola\ProjetoEscola.API\obj\Debug\net6.0\ref\ProjetoEscola.API.dll
+E:\Projetos\ProjetoEscola\ProjetoEscola\ProjetoEscola.API\obj\Debug\net6.0\staticwebassets\msbuild.ProjetoEscola.API.Microsoft.AspNetCore.StaticWebAssets.props
+E:\Projetos\ProjetoEscola\ProjetoEscola\ProjetoEscola.API\obj\Debug\net6.0\staticwebassets\msbuild.build.ProjetoEscola.API.props
+E:\Projetos\ProjetoEscola\ProjetoEscola\ProjetoEscola.API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ProjetoEscola.API.props
+E:\Projetos\ProjetoEscola\ProjetoEscola\ProjetoEscola.API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ProjetoEscola.API.props
+E:\Projetos\ProjetoEscola\ProjetoEscola\ProjetoEscola.API\obj\Debug\net6.0\staticwebassets.pack.json

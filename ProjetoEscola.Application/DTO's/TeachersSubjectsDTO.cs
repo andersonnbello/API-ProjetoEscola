@@ -8,10 +8,10 @@ namespace ProjetoEscola.Application.DTO_s
         public int Id { get; set; }
 
         ///[JsonPropertyName("Código do Professor")]
-        public int TeachersId { get; set; }
+        public int TeacherId { get; set; }
 
         //[JsonPropertyName("Código da Disciplina")]
-        public int SubjectsId { get; set; }
+        public int SubjectId { get; set; }
 
         //[JsonPropertyName("Professores")]
         public TeachersDTO Teachers { get; set; }

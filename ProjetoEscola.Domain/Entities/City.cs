@@ -9,6 +9,8 @@ namespace ProjetoEscola.Domain.Entities
         [Key]
         public int Id { get; set; }
 
+        [Required]
+        [StringLength(50)]
         public string CityName { get; set; }
 
         public ICollection<StudentAddress> StudentsAddress { get; set; }

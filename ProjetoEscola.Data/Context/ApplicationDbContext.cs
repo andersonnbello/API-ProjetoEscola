@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjetoEscola.Domain.Entities;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ProjetoEscola.Data.Context
 {
@@ -172,7 +173,7 @@ namespace ProjetoEscola.Data.Context
             modelBuilder.Entity<City>()
                 .Property(x => x.CityName)
                 .HasColumnName("CityName")
-                .HasColumnType("varchar")
+                .HasColumnType("varchar(50)")
                 .IsRequired();
 
             modelBuilder.Entity<City>()
@@ -228,7 +229,8 @@ namespace ProjetoEscola.Data.Context
             modelBuilder.Entity<State>()
                 .Property(x => x.StateName)
                 .HasColumnName("StateName")
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(50)")
+                .IsRequired();
             #endregion
 
             //--------------------------------------//
@@ -317,6 +319,10 @@ namespace ProjetoEscola.Data.Context
                 .ToTable("TeacherSubjects");
 
             modelBuilder.Entity<TeacherSubject>()
+                .Property(x => x.SubjectId)
+                .HasColumnName("SubjectId");
+
+            modelBuilder.Entity<TeacherSubject>()
                   .HasOne(x => x.Subjects)
                   .WithMany(x => x.TeachersSubjects);
 
@@ -343,12 +349,12 @@ namespace ProjetoEscola.Data.Context
 
             modelBuilder.Entity<StudentSubject>()
                 .Property(x => x.SubjectId)
-                .HasColumnName("SubjectsId")
+                .HasColumnName("SubjectId")
                 .HasColumnType("int");
 
             modelBuilder.Entity<StudentSubject>()
                 .Property(x => x.StudentId)
-                .HasColumnName("StudentsId")
+                .HasColumnName("StudentId")
                 .HasColumnType("int");
 
             modelBuilder.Entity<StudentSubject>()
@@ -400,6 +406,12 @@ namespace ProjetoEscola.Data.Context
 
             modelBuilder.Entity<StudentAddress>()
                 .ToTable("StudentAddresses");
+
+            modelBuilder.Entity<StudentAddress>()
+                .Property(x => x.Number)
+                .HasColumnType("varchar(10)")
+                .HasColumnName("Number")
+                .IsRequired();
 
             modelBuilder.Entity<StudentAddress>()
                 .HasOne(x => x.Students)

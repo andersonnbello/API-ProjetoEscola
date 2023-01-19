@@ -71,7 +71,7 @@ namespace ProjetoEscola.Data.Repositories
         {
             TeacherSubject teacherSubject = null;
             string[] includes = new string[] { "Subjects", "Teachers" };
-            Expression<Func<TeacherSubject, bool>> expressionFiltro = (x => x.SubjectsId == id);
+            Expression<Func<TeacherSubject, bool>> expressionFiltro = (x => x.SubjectId == id);
 
             teacherSubject = await _repositoryBase.Select(expressionFiltro, includes).FirstOrDefaultAsync();
 
@@ -82,7 +82,7 @@ namespace ProjetoEscola.Data.Repositories
         {
             TeacherSubject teacherSubject = null;
             string[] includes = new string[] { "Subjects", "Teachers" };
-            Expression<Func<TeacherSubject, bool>> expressionFiltro = (x => x.SubjectsId == id);
+            Expression<Func<TeacherSubject, bool>> expressionFiltro = (x => x.SubjectId == id);
 
             teacherSubject = await _repositoryBase.Select(expressionFiltro, includes).FirstOrDefaultAsync();
 

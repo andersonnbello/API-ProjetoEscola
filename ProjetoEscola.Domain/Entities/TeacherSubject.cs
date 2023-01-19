@@ -10,11 +10,11 @@ namespace ProjetoEscola.Domain.Entities
 
         [Required]
         [ForeignKey("Teachers")]
-        public int TeachersId { get; set; }
+        public int TeacherId { get; set; }
 
         [Required]
         [ForeignKey("Subjects")]
-        public int  SubjectsId { get; set; }
+        public int  SubjectId { get; set; }
 
         public virtual Teacher Teachers { get; set; }
 
