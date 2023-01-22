@@ -12,15 +12,17 @@ namespace ProjetoEscola.Application.Services
         private readonly IStudentsRepository _studentsRepository;
         private readonly ISubjectRepository _subjectRepository;
         private readonly IStudentsSubjectsRepository _studentsSubjectsRepository;
+        private readonly ISerieRepository _serieRepository;
         private readonly IMapper _mapper;
 
-        public StudentsService(IStudentsRepository studentsRepository, IMapper mapper, 
-                                ISubjectRepository subjectRepository, IStudentsSubjectsRepository studentsSubjectsRepository)
+        public StudentsService(IStudentsRepository studentsRepository, IMapper mapper,
+                                ISubjectRepository subjectRepository, IStudentsSubjectsRepository studentsSubjectsRepository, ISerieRepository serieRepository)
         {
             _studentsRepository = studentsRepository;
             _mapper = mapper;
             _subjectRepository = subjectRepository;
             _studentsSubjectsRepository = studentsSubjectsRepository;
+            _serieRepository = serieRepository;
         }
 
         public async Task<ResultService<StudentsDTO>> CreateAsync(StudentsDTO studentsDTO)
@@ -46,6 +48,12 @@ namespace ProjetoEscola.Application.Services
             {
                 return ResultService.Fail<StudentsDTO>("Aluno menor de 16 anos não pode ser matriculado nessa escola!");
             }
+
+            int anoAtual = DateTime.Now.Year;
+            int anoNascimento = studentsDTO.BirthDate.Date.Year;
+
+            var idadeAluno = anoAtual - anoNascimento;
+            studentsEntity.Age = idadeAluno;
 
             studentsEntity.CreatAt = DateTime.Now;
             studentsEntity.isActive = true;

@@ -38,6 +38,8 @@ namespace ProjetoEscola.Data.Repositories
 
         public async Task<IEnumerable<Serie>> GetAllAsync()
         {
+            //var resultado = await _repositoryBase.Select().GroupBy(x => x.Categoria).Select(x => new { x.Key, Name = x.Select(x => x.Name) }).ToListAsync();
+
             List<Serie> listSeries = new List<Serie>();
             listSeries = await _repositoryBase.Select().OrderBy(x => x.Name).ToListAsync();
 

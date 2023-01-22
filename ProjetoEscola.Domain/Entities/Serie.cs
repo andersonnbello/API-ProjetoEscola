@@ -12,6 +12,8 @@ namespace ProjetoEscola.Domain.Entities
         [StringLength(10)]
         public string Name { get; set; }
 
+        public int Categoria { get; set; }
+
         public ICollection<StudentSerie> StudentsSeries { get; set; } = new List<StudentSerie>();
 
         public Serie(string name)
