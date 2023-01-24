@@ -36,6 +36,26 @@ namespace ProjetoEscola.API.Controllers
         }
 
         /// <summary>
+        /// Retorna todas as matérias referente a um aluno consultado pelo Id.
+        /// </summary>
+        [HttpGet, Route("GetAllAsync")]
+        public async Task<ActionResult> GetAllAsync(int id)
+        {
+            try
+            {
+                var result = await _studentsSubjectsService.GetAllAsync(id);
+                if (result.Data != null)
+                    return Ok(result);
+
+                return BadRequest(result);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        /// <summary>
         /// Retorna uma matéria e um aluno consultado pelo Id.
         /// </summary>
         [HttpGet, Route("GetByIdAsync")]

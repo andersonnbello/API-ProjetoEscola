@@ -49,8 +49,9 @@ namespace ProjetoEscola.Data.Repositories
         {
             List<StudentSubject> listStudentsSubjects = new List<StudentSubject>();
             Expression<Func<StudentSubject, bool>> expressionFiltro = (x => x.StudentId == id);
+            string[] includes = new string[] { "Students", "Subjects" };
 
-            listStudentsSubjects = await _repositoryBase.Select(expressionFiltro).ToListAsync();
+            listStudentsSubjects = await _repositoryBase.Select(expressionFiltro, includes).ToListAsync();
 
             return listStudentsSubjects;
         }
