@@ -14,14 +14,6 @@ namespace ProjetoEscola.Application.Validations
             RuleFor(x => x.Cep)
                 .NotNull()
                 .NotEmpty();
-
-            //RuleFor(x => x.Number)
-            //    .NotNull()
-            //    .NotEmpty();
-
-            //RuleFor(x => x.StudentsId)
-            //    .NotNull()
-            //    .NotEmpty();
         }
     }
 }

@@ -14,7 +14,11 @@ namespace ProjetoEscola.Application.Services
         private readonly ITeacherRepository _teacherRepository;
         private readonly IMapper _mapper;
 
-        public TeacherSubjectService(ITeacherSubjectRepository teacherSubjectRepository, IMapper mapper, ITeacherRepository teacherRepository, ISubjectRepository subjectRepository)
+        public TeacherSubjectService(
+            ITeacherSubjectRepository teacherSubjectRepository, 
+            IMapper mapper, 
+            ITeacherRepository teacherRepository, 
+            ISubjectRepository subjectRepository)
         {
             _teacherSubjectRepository = teacherSubjectRepository;
             _mapper = mapper;

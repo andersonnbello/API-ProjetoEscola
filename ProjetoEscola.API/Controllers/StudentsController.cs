@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoEscola.Application.DTO_s;
 using ProjetoEscola.Application.Services.Interfaces;
+using ProjetoEscola.Data.Repositories;
+using ProjetoEscola.Domain.Entities;
 using ProjetoEscola.Domain.Interface;
 
 namespace ProjetoEscola.API.Controllers
@@ -15,7 +17,14 @@ namespace ProjetoEscola.API.Controllers
         private readonly IStudentsAddressService _studentsAddressService;
         private readonly IUnitOfWork _unitOfWork;
 
-        public StudentsController(IStudentsService studentsService, IStudentsSubjectsService studentsSubjectsService, IStudentSerieService studentSerieService, IStudentsAddressService studentsAddressService, IUnitOfWork unitOfWork)
+        public StudentsController(
+            IStudentsService studentsService,
+            IStudentsSubjectsService studentsSubjectsService,
+            IStudentSerieService studentSerieService,
+            IStudentsAddressService studentsAddressService,
+            IUnitOfWork unitOfWork,
+            ISubjectRepository subjectRepository,
+            ISubjectService subjectService)
         {
             _studentsService = studentsService;
             _studentsSubjectsService = studentsSubjectsService;

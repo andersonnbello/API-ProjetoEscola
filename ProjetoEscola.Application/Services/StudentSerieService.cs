@@ -14,7 +14,11 @@ namespace ProjetoEscola.Application.Services
         private readonly ISerieRepository _serieRepository;
         private readonly IMapper _mapper;
 
-        public StudentSerieService(IStudentSerieRepository studentSerieRepository, IMapper mapper, IStudentsRepository studentRepository, ISerieRepository serieRepository)
+        public StudentSerieService(
+            IStudentSerieRepository studentSerieRepository, 
+            IMapper mapper, 
+            IStudentsRepository studentRepository, 
+            ISerieRepository serieRepository)
         {
             _studentSerieRepository = studentSerieRepository;
             _mapper = mapper;

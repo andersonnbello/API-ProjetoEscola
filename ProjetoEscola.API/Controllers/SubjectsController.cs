@@ -15,7 +15,11 @@ namespace ProjetoEscola.API.Controllers
         private readonly IUnitOfWork _unitOfWork;
 
 
-        public SubjectsController(ISubjectService subjectService, IStudentsSubjectsService studentsSubjectsService, ITeacherSubjectService teacherSubjectService, IUnitOfWork unitOfWork)
+        public SubjectsController(
+            ISubjectService subjectService, 
+            IStudentsSubjectsService studentsSubjectsService, 
+            ITeacherSubjectService teacherSubjectService, 
+            IUnitOfWork unitOfWork)
         {
             _subjectService = subjectService;
             _studentsSubjectsService = studentsSubjectsService;
