@@ -222,6 +222,11 @@
             Retorna todas as matérias referente a um aluno.
             </summary>
         </member>
+        <member name="M:ProjetoEscola.API.Controllers.StudentSubjectsController.GetAllAsync(System.Int32)">
+            <summary>
+            Retorna todas as matérias referente a um aluno consultado pelo Id.
+            </summary>
+        </member>
         <member name="M:ProjetoEscola.API.Controllers.StudentSubjectsController.GetByIdAsync(System.Int32)">
             <summary>
             Retorna uma matéria e um aluno consultado pelo Id.

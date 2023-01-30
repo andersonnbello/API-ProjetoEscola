@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Correios;
+using Microsoft.AspNetCore.Mvc;
 using ProjetoEscola.Application.DTO_s;
 using ProjetoEscola.Application.Services.Interfaces;
+using ProjetoEscola.Domain.Interface;
 
 namespace ProjetoEscola.API.Controllers
 {
@@ -9,10 +11,23 @@ namespace ProjetoEscola.API.Controllers
     public class AddressesController : ControllerBase
     {
         private readonly IAddressService _addressService;
+        private readonly ICountryService _countryService;
+        private readonly IStateService _stateService;
+        private readonly ICityService _cityService;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public AddressesController(IAddressService addressService)
+        public AddressesController(
+            IAddressService addressService,
+            ICountryService countryService,
+            IStateService stateService,
+            ICityService cityService,
+            IUnitOfWork unitOfWork)
         {
             _addressService = addressService;
+            _countryService = countryService;
+            _stateService = stateService;
+            _cityService = cityService;
+            _unitOfWork = unitOfWork;
         }
 
         /// <summary>
@@ -59,18 +74,39 @@ namespace ProjetoEscola.API.Controllers
         /// Insere um endereço.
         /// </summary>
         [HttpPost]
-        public ActionResult CreateAsync([FromBody] AddressDTO addressDTO)
+        public async Task<ActionResult> CreateAsync([FromBody] AddressDTO addressDTO)
         {
+            await _unitOfWork.BeginTransactionAsync();
+
             try
             {
-                var result = _addressService.CreateAsync(addressDTO);
-                if (result.Data != null)
-                    return Ok(result);
+                CorreiosApi correiosApi = new CorreiosApi();
+                var retornoCep = correiosApi.consultaCEP(addressDTO.Cep);
+                if(retornoCep.end != "")
+                {
+                    addressDTO.AddressName = retornoCep.end;
+                    _addressService.CreateAsync(addressDTO);
+                }
+                if(retornoCep.cidade != "")
+                {
+                    CityDTO cityDto = new CityDTO();
+                    cityDto.CityName = retornoCep.cidade;
+                    _cityService.CreateAsync(cityDto);
+                }
+                if(retornoCep.uf != "")
+                {
+                    StateDTO stateDTO = new StateDTO();
+                    stateDTO.StateName = retornoCep.uf;
+                    var stateCreate = _stateService.CreateAsync(stateDTO);
+                }
 
-                return BadRequest(result);
+                await _unitOfWork.CommitAsync();
+
+                return Ok();
             }
             catch (Exception ex)
             {
+                await _unitOfWork.RollbackAsync();
                 throw new Exception(ex.Message);
             }
         }
