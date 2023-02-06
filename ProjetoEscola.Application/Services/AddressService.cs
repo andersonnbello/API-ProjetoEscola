@@ -64,6 +64,15 @@ namespace ProjetoEscola.Application.Services
             return ResultService.Ok<AddressDTO>(_mapper.Map<AddressDTO>(address));
         }
 
+        public async Task<ResultService<AddressDTO>> GetByNameAsync(string? addressName)
+        {
+            var address = await _addressRepository.GetByName(addressName);
+            if (address == null)
+                return ResultService.Fail<AddressDTO>("Endereço não encontrado!");
+
+            return ResultService.Ok<AddressDTO>(_mapper.Map<AddressDTO>(address));
+        }
+
         public async Task<ResultService> UpdateAsync(AddressDTO addressDTO)
         {
             if (addressDTO == null)

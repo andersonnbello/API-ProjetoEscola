@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using ProjetoEscola.Data.Context;
 using ProjetoEscola.Data.Repositories.Base;
 using ProjetoEscola.Domain.Entities;
@@ -48,6 +49,16 @@ namespace ProjetoEscola.Data.Repositories
             State state = null;
 
             state = await _repositoryBase.Select(expressiolFiltro).FirstOrDefaultAsync();
+
+            return state;
+        }
+
+        public async Task<State> GetByNameAsync(string stateName)
+        {
+            Expression<Func<State, bool>> expressionFiltro = (x => x.StateName == stateName);
+            State state = null;
+
+            state = await _repositoryBase.Select(expressionFiltro).FirstOrDefaultAsync();
 
             return state;
         }

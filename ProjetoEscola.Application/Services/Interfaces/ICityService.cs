@@ -10,5 +10,6 @@ namespace ProjetoEscola.Application.Services.Interfaces
 
         Task<ResultService<IEnumerable<CityDTO>>> GetAllAsync();
         Task<ResultService<CityDTO>> GetById(int id);
+        Task<ResultService<CityDTO>> GetByNameAsync(string cityName);
     }
 }

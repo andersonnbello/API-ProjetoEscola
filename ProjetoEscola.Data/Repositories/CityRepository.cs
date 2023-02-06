@@ -53,6 +53,16 @@ namespace ProjetoEscola.Data.Repositories
             return city;
         }
 
+        public async Task<City> GetByNameAsync(string cityName)
+        {
+            Expression<Func<City, bool>> expressiolFiltro = (x => x.CityName == cityName);
+            City city = null;
+
+            city = await _repositoryBase.Select(expressiolFiltro).FirstOrDefaultAsync();
+
+            return city;
+        }
+
         public City UpdateAsync(City city)
         {
             _repositoryBase.Update(city);

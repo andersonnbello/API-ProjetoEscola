@@ -64,6 +64,15 @@ namespace ProjetoEscola.Application.Services
             return ResultService.Ok<StateDTO>(_mapper.Map<StateDTO>(state));
         }
 
+        public async Task<ResultService<StateDTO>> GetByNameAsync(string stateName)
+        {
+            var state = await _stateRepository.GetByNameAsync(stateName);
+            if (state == null)
+                return ResultService.Fail<StateDTO>("Estado não encontrado!");
+
+            return ResultService.Ok<StateDTO>(_mapper.Map<StateDTO>(state));
+        }
+
         public async Task<ResultService> UpdateAsync(StateDTO stateDTO)
         {
             if (stateDTO == null)

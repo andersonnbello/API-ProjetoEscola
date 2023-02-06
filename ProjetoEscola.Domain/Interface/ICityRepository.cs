@@ -9,6 +9,7 @@ namespace ProjetoEscola.Domain.Interface
         Task DeleteAsync(City city);
 
         Task<City> GetById(int id);
+        Task<City> GetByNameAsync(string cityName);
         Task<IEnumerable<City>> GetAllAsync();
     }
 }

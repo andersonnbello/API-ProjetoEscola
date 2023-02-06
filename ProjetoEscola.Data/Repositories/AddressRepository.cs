@@ -53,6 +53,16 @@ namespace ProjetoEscola.Data.Repositories
             return address;
         }
 
+        public async Task<Address> GetByName(string? addressName)
+        {
+            Expression<Func<Address, bool>> expressiolFiltro = (x => x.AddressName == addressName);
+            Address address = null;
+
+            address = await _repositoryBase.Select(expressiolFiltro).FirstOrDefaultAsync();
+
+            return address;
+        }
+
         public Address UpdateAsync(Address address)
         {
             _repositoryBase.Update(address);

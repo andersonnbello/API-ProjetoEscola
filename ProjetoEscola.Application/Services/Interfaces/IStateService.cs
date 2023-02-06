@@ -1,4 +1,5 @@
 ﻿using ProjetoEscola.Application.DTO_s;
+using ProjetoEscola.Domain.Entities;
 
 namespace ProjetoEscola.Application.Services.Interfaces
 {
@@ -9,6 +10,8 @@ namespace ProjetoEscola.Application.Services.Interfaces
         Task<ResultService> DeleteAsync(int id);
 
         Task<ResultService<IEnumerable<StateDTO>>> GetAllAsync();
-        Task<ResultService<StateDTO>> GetById(int id); 
+        Task<ResultService<StateDTO>> GetById(int id);
+        Task<ResultService<StateDTO>> GetByNameAsync(string stateName);
+
     }
 }

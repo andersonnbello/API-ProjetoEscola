@@ -64,6 +64,15 @@ namespace ProjetoEscola.Application.Services
             return ResultService.Ok<CityDTO>(_mapper.Map<CityDTO>(state));
         }
 
+        public async Task<ResultService<CityDTO>> GetByNameAsync(string cityName)
+        {
+            var state = await _cityRepository.GetByNameAsync(cityName);
+            if (state == null)
+                return ResultService.Fail<CityDTO>("Cidade não encontrado!");
+
+            return ResultService.Ok<CityDTO>(_mapper.Map<CityDTO>(state));
+        }
+
         public async Task<ResultService> UpdateAsync(CityDTO cityDTO)
         {
             if (cityDTO == null)

@@ -82,18 +82,24 @@ namespace ProjetoEscola.API.Controllers
             {
                 CorreiosApi correiosApi = new CorreiosApi();
                 var retornoCep = correiosApi.consultaCEP(addressDTO.Cep);
-                if(retornoCep.end != "")
+
+                var address = await _addressService.GetByNameAsync(retornoCep.end);
+                if(address.Data == null || address.Data.AddressName.ToLower() != retornoCep.end.ToLower())
                 {
                     addressDTO.AddressName = retornoCep.end;
                     _addressService.CreateAsync(addressDTO);
                 }
-                if(retornoCep.cidade != "")
+
+                var city = await _cityService.GetByNameAsync(retornoCep.cidade);
+                if (city.Data == null || city.Data.CityName.ToLower() != retornoCep.cidade.ToLower())
                 {
                     CityDTO cityDto = new CityDTO();
                     cityDto.CityName = retornoCep.cidade;
                     _cityService.CreateAsync(cityDto);
                 }
-                if(retornoCep.uf != "")
+
+                var state = await _stateService.GetByNameAsync(retornoCep.uf);
+                if(state.Data == null || state.Data.StateName.ToLower() != retornoCep.uf.ToLower())
                 {
                     StateDTO stateDTO = new StateDTO();
                     stateDTO.StateName = retornoCep.uf;
@@ -102,7 +108,7 @@ namespace ProjetoEscola.API.Controllers
 
                 await _unitOfWork.CommitAsync();
 
-                return Ok();
+                return Ok(addressDTO);
             }
             catch (Exception ex)
             {
