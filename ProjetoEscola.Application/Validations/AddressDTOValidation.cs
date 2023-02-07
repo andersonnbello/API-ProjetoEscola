@@ -3,11 +3,11 @@ using ProjetoEscola.Application.DTO_s;
 
 namespace ProjetoEscola.Application.Validations
 {
-    public class AddressDTOValidation : AbstractValidator<AddressDTO>
+    public class AddressDTOValidation : AbstractValidator<EnderecoDTO>
     {
         public AddressDTOValidation()
         {
-            RuleFor(x => x.AddressName)
+            RuleFor(x => x.NomeEndereco)
                 .NotNull()
                 .NotEmpty();
 

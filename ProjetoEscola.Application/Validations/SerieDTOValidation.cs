@@ -7,7 +7,7 @@ namespace ProjetoEscola.Application.Validations
     {
         public SerieDTOValidation()
         {
-            RuleFor(x => x.Name)
+            RuleFor(x => x.NomeSerie)
                 .NotEmpty()
                 .NotNull();
         }

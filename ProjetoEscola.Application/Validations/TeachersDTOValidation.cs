@@ -3,11 +3,11 @@ using ProjetoEscola.Application.DTO_s;
 
 namespace ProjetoEscola.Application.Validations
 {
-    public class TeachersDTOValidation : AbstractValidator<TeachersDTO>
+    public class TeachersDTOValidation : AbstractValidator<ProfessorDTO>
     {
         public TeachersDTOValidation()
         {
-            RuleFor(x => x.FullName)
+            RuleFor(x => x.NomeCompleto)
                 .NotNull()
                 .NotEmpty();
 
@@ -19,7 +19,7 @@ namespace ProjetoEscola.Application.Validations
                 .NotNull()
                 .NotEmpty();
 
-            RuleFor(x => x.BirthDate)
+            RuleFor(x => x.DataNascimento)
                 .NotNull()
                 .NotEmpty();
         }

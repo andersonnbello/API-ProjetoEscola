@@ -3,11 +3,11 @@ using ProjetoEscola.Application.DTO_s;
 
 namespace ProjetoEscola.Application.Validations
 {
-    public class SubjectsDTOValidation : AbstractValidator<SubjectsDTO>
+    public class SubjectsDTOValidation : AbstractValidator<DisciplinaDTO>
     {
         public SubjectsDTOValidation()
         {
-            RuleFor(x => x.Name)
+            RuleFor(x => x.NomeDisciplina)
                 .NotEmpty()
                 .NotNull();
         }

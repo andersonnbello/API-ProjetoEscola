@@ -3,11 +3,11 @@ using ProjetoEscola.Application.DTO_s;
 
 namespace ProjetoEscola.Application.Validations
 {
-    public class StateDTOValidation : AbstractValidator<StateDTO>
+    public class StateDTOValidation : AbstractValidator<EstadoDTO>
     {
         public StateDTOValidation()
         {
-            RuleFor(x => x.StateName)
+            RuleFor(x => x.NomeEstado)
                 .NotNull()
                 .NotEmpty();
         }

@@ -1197,9 +1197,11 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
+          "Correios-Api": "1.1.1",
           "FluentValidation": "11.2.2",
           "ProjetoEscola.Data": "1.0.0",
-          "ProjetoEscola.Domain": "1.0.0"
+          "ProjetoEscola.Domain": "1.0.0",
+          "System.ServiceModel.Primitives": "4.10.0"
         },
         "compile": {
           "bin/placeholder/ProjetoEscola.Application.dll": {}

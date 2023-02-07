@@ -10,22 +10,22 @@ namespace ProjetoEscola.Domain.Entities
 
         [Required]
         [StringLength(10)]
-        public string Name { get; set; }
+        public string NomeSerie { get; set; }
 
         public int Categoria { get; set; }
 
-        public ICollection<StudentSerie> StudentsSeries { get; set; } = new List<StudentSerie>();
+        public ICollection<AlunoSerie> AlunoSeries { get; set; } = new List<AlunoSerie>();
 
-        public Serie(string name)
+        public Serie(string nomeSerie)
         {
-            Validation(name);
+            Validation(nomeSerie);
         }
 
-        public void Validation(string name)
+        public void Validation(string nomeSerie)
         {
-            DomainValidationException.When(string.IsNullOrEmpty(name), "Nome deve ser informado!");
+            DomainValidationException.When(string.IsNullOrEmpty(nomeSerie), "Nome deve ser informado!");
 
-            Name = name;
+            NomeSerie = nomeSerie;
         }
     }
 }

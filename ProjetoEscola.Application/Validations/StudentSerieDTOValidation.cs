@@ -3,7 +3,7 @@ using ProjetoEscola.Application.DTO_s;
 
 namespace ProjetoEscola.Application.Validations
 {
-    public class StudentSerieDTOValidation : AbstractValidator<StudentSerieDTO>
+    public class StudentSerieDTOValidation : AbstractValidator<AlunoSerieDTO>
     {
         public StudentSerieDTOValidation()
         {
@@ -11,7 +11,7 @@ namespace ProjetoEscola.Application.Validations
                 .NotEmpty()
                 .NotNull();
 
-            RuleFor(x => x.StudentId)
+            RuleFor(x => x.AlunoId)
                 .NotEmpty()
                 .NotNull();
         }

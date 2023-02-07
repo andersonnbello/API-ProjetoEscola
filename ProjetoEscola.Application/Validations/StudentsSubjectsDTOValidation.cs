@@ -3,15 +3,15 @@ using ProjetoEscola.Application.DTO_s;
 
 namespace ProjetoEscola.Application.Validations
 {
-    public class StudentsSubjectsDTOValidation : AbstractValidator<StudentsSubjectsDTO>
+    public class StudentsSubjectsDTOValidation : AbstractValidator<AlunoDisciplinaDTO>
     {
         public StudentsSubjectsDTOValidation()
         {
-            RuleFor(x => x.StudentId)
+            RuleFor(x => x.AlunoId)
                 .NotNull()
                 .NotEmpty();
 
-            RuleFor(x => x.SubjectId)
+            RuleFor(x => x.DisciplinaId)
                 .NotNull()
                 .NotEmpty();
         }

@@ -43,7 +43,7 @@ namespace ProjetoEscola.Application.Services
 
             await _serieRepository.DeleteAsync(serie);
 
-            return ResultService.Ok($"Serie {serie.Name} excluido com sucesso!");
+            return ResultService.Ok($"Serie {serie.NomeSerie} excluido com sucesso!");
         }
 
         public async Task<ResultService<IEnumerable<SerieDTO>>> GetAllAsync()
@@ -81,7 +81,7 @@ namespace ProjetoEscola.Application.Services
 
             _serieRepository.UpdateAsync(serie);
 
-            return ResultService.Ok($"Série {serie.Name} atualizado com sucesso!");
+            return ResultService.Ok($"Série {serie.NomeSerie} atualizado com sucesso!");
         }
     }
 }

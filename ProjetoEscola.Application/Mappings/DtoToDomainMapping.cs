@@ -8,18 +8,17 @@ namespace ProjetoEscola.Application.Mappings
     {
         public DtoToDomainMapping()
         {
-            CreateMap<StudentsDTO, Student>().ReverseMap();
-            CreateMap<StudentsSubjectsDTO, StudentSubject>().ReverseMap();
-            CreateMap<TeachersSubjectsDTO, TeacherSubject>().ReverseMap();
-            CreateMap<SubjectsDTO, Subject>().ReverseMap();
-            CreateMap<TeachersDTO, Teacher>().ReverseMap();
-            CreateMap<AddressDTO, Address>().ReverseMap();
-            CreateMap<StateDTO, State>().ReverseMap();
-            CreateMap<CityDTO, City>().ReverseMap();
-            CreateMap<CountryDTO, Country>().ReverseMap();
-            CreateMap<StudentsAddressDTO, StudentAddress>().ReverseMap();
+            CreateMap<AlunoDTO, Aluno>().ReverseMap();
+            CreateMap<AlunoDisciplinaDTO, AlunoDisciplina>().ReverseMap();
+            CreateMap<ProfessorDisciplinaDTO, ProfessorDisciplina>().ReverseMap();
+            CreateMap<DisciplinaDTO, Disciplina>().ReverseMap();
+            CreateMap<ProfessorDTO, Professor>().ReverseMap();
+            CreateMap<EnderecoDTO, Endereco>().ReverseMap();
+            CreateMap<EstadoDTO, Estado>().ReverseMap();
+            CreateMap<CidadeDTO, Cidade>().ReverseMap();
+            CreateMap<AlunoEnderecoDTO, AlunoEndereco>().ReverseMap();
             CreateMap<SerieDTO, Serie>().ReverseMap();
-            CreateMap<StudentSerieDTO, StudentSerie>().ReverseMap();
+            CreateMap<AlunoSerieDTO, AlunoSerie>().ReverseMap();
         }
     }
 }

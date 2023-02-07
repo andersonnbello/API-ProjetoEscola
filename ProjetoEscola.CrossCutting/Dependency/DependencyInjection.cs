@@ -16,18 +16,17 @@ namespace ProjetoEscola.CrossCutting.Dependency
     {
         public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<IStudentsRepository, StudentsRepository>();
-            services.AddScoped<IStudentsSubjectsRepository, StudentsSubjectsRepository>();
-            services.AddScoped<ITeacherSubjectRepository, TeacherSubjectRepository>();
-            services.AddScoped<ITeacherRepository, TeacherRepository>();
-            services.AddScoped<ISubjectRepository, SubjectRepository>();
-            services.AddScoped<IStateRepository, StateRepository>();
-            services.AddScoped<ICityRepository, CityRepository>();
-            services.AddScoped<ICountryRepository, CountryRepository>();
-            services.AddScoped<IStudentsAddressRepository, StudentsAddressRepository>();
+            services.AddScoped<IAlunoRepository, AlunoRepository>();
+            services.AddScoped<IAlunoDisciplinaRepository, AlunoDisciplinaRepository>();
+            services.AddScoped<IProfessorDisicplinaRepository, ProfessorDisciplinaRepository>();
+            services.AddScoped<IProfessorRepository, ProfessorRepository>();
+            services.AddScoped<IDisciplinaRepository, DisciplinaRepository>();
+            services.AddScoped<IEstadoRepository, EstadoRepository>();
+            services.AddScoped<ICidadeRepository, CidadeRepository>();
+            services.AddScoped<IAlunoEnderecoRepository, AlunoEnderecoRepository>();
             services.AddScoped<ISerieRepository, SerieRepository>();
-            services.AddScoped<IStudentSerieRepository, StudentSerieRepository>();
-            services.AddScoped<IAddressRepository, AddressRepository>();
+            services.AddScoped<IAlunoSerieRepository, AlunoSerieRepository>();
+            services.AddScoped<IEnderecoRepository, EnderecoRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddControllers().AddNewtonsoftJson(options =>
@@ -42,19 +41,18 @@ namespace ProjetoEscola.CrossCutting.Dependency
 
         public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<IStudentsService, StudentsService>();
-            services.AddScoped<IStudentsSubjectsService, StudentsSubjectsService>();
-            services.AddScoped<ITeacherSubjectService, TeacherSubjectService>();
-            services.AddScoped<ITeacherService, TeacherService>();
-            services.AddScoped<ISubjectService, SubjectService>();
-            services.AddScoped<IStateService, StateService>();
-            services.AddScoped<ICityService, CityService>();
-            services.AddScoped<ICountryService, CountryService>();
-            services.AddScoped<IStudentsService, StudentsService>();
-            services.AddScoped<IStudentsAddressService, StudentsAddressService>();
+            services.AddScoped<IAlunoService, AlunoService>();
+            services.AddScoped<IAlunoDisciplinaService, AlunoDisciplinaService>();
+            services.AddScoped<IProfessorDisciplinaService, ProfessorDisciplinaService>();
+            services.AddScoped<IProfessorService, ProfessorService>();
+            services.AddScoped<IDisciplinaService, DisciplinaService>();
+            services.AddScoped<IEstadoService, EstadoService>();
+            services.AddScoped<ICidadeService, CidadeService>();
+            services.AddScoped<IAlunoService, AlunoService>();
+            services.AddScoped<IAlunoEnderecoService, AlunoEnderecoService>();
             services.AddScoped<ISerieService, SerieService>();
-            services.AddScoped<IStudentSerieService, StudentSerieService>();
-            services.AddScoped<IAddressService, AddressService>();
+            services.AddScoped<IAlunoSerieService, AlunoSerieService>();
+            services.AddScoped<IEnderecoService, EnderecoService>();
 
             services.AddAutoMapper(typeof(DomainToDtoMapping));
 

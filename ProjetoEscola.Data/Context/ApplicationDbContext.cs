@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjetoEscola.Domain.Entities;
-using System.Security.Cryptography.X509Certificates;
 
 namespace ProjetoEscola.Data.Context
 {
@@ -9,176 +8,175 @@ namespace ProjetoEscola.Data.Context
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         { }
 
-        public DbSet<Address> Addresses { get; set; }
-        public DbSet<Student> Students { get; set; }
-        public DbSet<Subject> Subjects { get; set; }
-        public DbSet<City> Citys { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Disciplina> Disciplinas { get; set; }
+        public DbSet<Cidade> Cidades { get; set; }
         public DbSet<Serie> Series { get; set; }
-        public DbSet<State> States { get; set; }
-        public DbSet<Country> Countrys { get; set; }
-        public DbSet<Teacher> Teachers { get; set; }
-        public DbSet<TeacherSubject> TeacherSubjects { get; set; }
-        public DbSet<StudentSubject> StudentSubjects { get; set; }
-        public DbSet<StudentSerie> StudentSeries { get; set; }
-        public DbSet<StudentAddress> StudentAddresses { get; set; }
+        public DbSet<Estado> Estados { get; set; }
+        public DbSet<Professor> Professores { get; set; }
+        public DbSet<ProfessorDisciplina> ProfessorDisciplinas { get; set; }
+        public DbSet<AlunoDisciplina> AlunoDisciplinas { get; set; }
+        public DbSet<AlunoSerie> AlunoSeries { get; set; }
+        public DbSet<AlunoEndereco> AlunoEnderecos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            #region ADDRESS
+            #region ENDEREÇO
 
-            modelBuilder.Entity<Address>()
-                .ToTable("Addresses");
+            modelBuilder.Entity<Endereco>()
+                .ToTable("Enderecos");
 
-            modelBuilder.Entity<Address>()
+            modelBuilder.Entity<Endereco>()
                 .HasKey(x => x.Id);
 
-            modelBuilder.Entity<Address>()
+            modelBuilder.Entity<Endereco>()
                 .Property(x => x.Id)
                 .HasColumnName("Id")
                 .UseIdentityColumn();
 
-            modelBuilder.Entity<Address>()
-                .Property(x => x.AddressName)
+            modelBuilder.Entity<Endereco>()
+                .Property(x => x.NomeEndereco)
                 .HasColumnType("varchar(200)")
-                .HasColumnName("AddressName")
+                .HasColumnName("NomeEndereco")
                 .IsRequired();
 
-            modelBuilder.Entity<Address>()
-                .Property(x => x.Number)
+            modelBuilder.Entity<Endereco>()
+                .Property(x => x.Numero)
                 .HasColumnType("varchar(10)")
-                .HasColumnName("Number")
+                .HasColumnName("Numero")
                 .IsRequired();
 
-            modelBuilder.Entity<Address>()
+            modelBuilder.Entity<Endereco>()
                 .Property(x => x.Cep)
                 .HasColumnType("varchar(20)")
                 .HasColumnName("Cep")
                 .IsRequired();
 
-            modelBuilder.Entity<Address>()
-                .HasMany(x => x.StudentsAddress)
-                .WithOne(x => x.Address);
+            modelBuilder.Entity<Endereco>()
+                .HasMany(x => x.AlunoEnderecos)
+                .WithOne(x => x.Endereco);
 
             #endregion
 
             //--------------------------------------//
 
-            #region STUDENT
+            #region ALUNO
 
-            modelBuilder.Entity<Student>()
-                .ToTable("Students");
+            modelBuilder.Entity<Aluno>()
+                .ToTable("Alunos");
 
-            modelBuilder.Entity<Student>()
+            modelBuilder.Entity<Aluno>()
                 .HasKey(x => x.Id);
 
-            modelBuilder.Entity<Student>()
+            modelBuilder.Entity<Aluno>()
                 .Property(x => x.Id)
                 .HasColumnName("Id")
                 .UseIdentityColumn();
 
-            modelBuilder.Entity<Student>()
-                .Property(x => x.FullName)
-                .HasColumnName("FullName")
+            modelBuilder.Entity<Aluno>()
+                .Property(x => x.NomeCompleto)
+                .HasColumnName("NomeCompleto")
                 .HasColumnType("varchar(50)")
                 .IsRequired();
 
-            modelBuilder.Entity<Student>()
+            modelBuilder.Entity<Aluno>()
                 .Property(x => x.Rg)
                 .HasColumnName("Rg")
                 .HasColumnType("varchar(20)")
                 .IsRequired();
 
-            modelBuilder.Entity<Student>()
-                .Property(x => x.Age)
-                .HasColumnName("Age")
+            modelBuilder.Entity<Aluno>()
+                .Property(x => x.Idade)
+                .HasColumnName("Idade")
                 .HasColumnType("int")
                 .IsRequired();
 
-            modelBuilder.Entity<Student>()
+            modelBuilder.Entity<Aluno>()
                 .Property(x => x.Cpf)
                 .HasColumnName("Cpf")
                 .HasColumnType("varchar(20)")
                 .IsRequired();
 
-            modelBuilder.Entity<Student>()
-                .Property(x => x.BirthDate)
-                .HasColumnName("BirthDate")
+            modelBuilder.Entity<Aluno>()
+                .Property(x => x.DataNascimento)
+                .HasColumnName("DataNascimento")
                 .HasColumnType("date")
                 .IsRequired();
 
-            modelBuilder.Entity<Student>()
-                .Property(x => x.isActive)
-                .HasColumnName("isActive")
+            modelBuilder.Entity<Aluno>()
+                .Property(x => x.isAtivo)
+                .HasColumnName("isAtivo")
                 .HasColumnType("bit");
 
-            modelBuilder.Entity<Student>()
+            modelBuilder.Entity<Aluno>()
                .Property(x => x.CreatAt)
                .HasColumnName("CreatAt")
                .HasColumnType("datetime")
                .IsRequired();
 
-            modelBuilder.Entity<Student>()
+            modelBuilder.Entity<Aluno>()
                .Property(x => x.UpdatAt)
                .HasColumnName("UpdatAt")
                .HasColumnType("datetime");
 
-            modelBuilder.Entity<Student>()
-                .HasMany(x => x.StudentsSubjects)
-                .WithOne(x => x.Students);
+            modelBuilder.Entity<Aluno>()
+                .HasMany(x => x.AlunoDisciplinas)
+                .WithOne(x => x.Aluno);
 
-            modelBuilder.Entity<Student>()
-                .HasMany(x => x.StudentsAddress)
-                .WithOne(x => x.Students);
+            modelBuilder.Entity<Aluno>()
+                .HasMany(x => x.AlunoEnderecos)
+                .WithOne(x => x.Aluno);
 
             #endregion
 
             //--------------------------------------//
 
-            #region SUBJECT
+            #region DISCIPLINA
 
-            modelBuilder.Entity<Subject>()
-                .ToTable("Subjects");
+            modelBuilder.Entity<Disciplina>()
+                .ToTable("Disciplinas");
 
-            modelBuilder.Entity<Subject>()
+            modelBuilder.Entity<Disciplina>()
                 .HasKey(x => x.Id);
 
-            modelBuilder.Entity<Subject>()
+            modelBuilder.Entity<Disciplina>()
                 .Property(x => x.Id)
                 .UseIdentityColumn();
 
-            modelBuilder.Entity<Subject>()
-                .Property(x => x.Name)
+            modelBuilder.Entity<Disciplina>()
+                .Property(x => x.NomeDisciplina)
                 .HasColumnType("varchar(50)")
-                .HasColumnName("Name")
+                .HasColumnName("NomeDisciplina")
                 .IsRequired();
 
             #endregion
 
             //--------------------------------------//
 
-            #region CITY
+            #region CIDADE
 
-            modelBuilder.Entity<City>()
-                .ToTable("Citys");
+            modelBuilder.Entity<Cidade>()
+                .ToTable("Cidades");
 
-            modelBuilder.Entity<City>()
+            modelBuilder.Entity<Cidade>()
                 .HasKey(x => x.Id);
 
-            modelBuilder.Entity<City>()
+            modelBuilder.Entity<Cidade>()
                 .Property(x => x.Id)
                 .UseIdentityColumn();
 
-            modelBuilder.Entity<City>()
-                .Property(x => x.CityName)
-                .HasColumnName("CityName")
+            modelBuilder.Entity<Cidade>()
+                .Property(x => x.NomeCidade)
+                .HasColumnName("NomeCidade")
                 .HasColumnType("varchar(50)")
                 .IsRequired();
 
-            modelBuilder.Entity<City>()
-                .HasMany(x => x.StudentsAddress)
-                .WithOne(x => x.Citys);
+            modelBuilder.Entity<Cidade>()
+                .HasMany(x => x.AlunoEnderecos)
+                .WithOne(x => x.Cidade);
             #endregion
 
             //--------------------------------------//
@@ -197,245 +195,209 @@ namespace ProjetoEscola.Data.Context
                 .UseIdentityColumn();
 
             modelBuilder.Entity<Serie>()
-                .Property(x => x.Name)
+                .Property(x => x.NomeSerie)
                 .HasColumnType("varchar(10)")
-                .HasColumnName("Name")
+                .HasColumnName("NomeSerie")
                 .IsRequired();
 
             modelBuilder.Entity<Serie>()
-                .HasMany(x => x.StudentsSeries)
+                .HasMany(x => x.AlunoSeries)
                 .WithOne(x => x.Series);
 
             #endregion
 
             //--------------------------------------//
 
-            #region STATE
+            #region ESTADO
 
-            modelBuilder.Entity<State>()
-                .ToTable("States");
+            modelBuilder.Entity<Estado>()
+                .ToTable("Estados");
 
-            modelBuilder.Entity<State>()
-                .HasMany(x => x.StudentsAddress)
-                .WithOne(x => x.States);
+            modelBuilder.Entity<Estado>()
+                .HasMany(x => x.AlunoEnderecos)
+                .WithOne(x => x.Estado);
 
-            modelBuilder.Entity<State>()
+            modelBuilder.Entity<Estado>()
                 .Property(x => x.Id)
                 .UseIdentityColumn();
 
-            modelBuilder.Entity<State>()
+            modelBuilder.Entity<Estado>()
                 .HasKey(x => x.Id);
 
-            modelBuilder.Entity<State>()
-                .Property(x => x.StateName)
-                .HasColumnName("StateName")
+            modelBuilder.Entity<Estado>()
+                .Property(x => x.NomeEstado)
+                .HasColumnName("NomeEstado")
                 .HasColumnType("varchar(50)")
                 .IsRequired();
             #endregion
 
             //--------------------------------------//
 
-            #region COUNTRY
+            #region PROFESSORES
 
-            modelBuilder.Entity<Country>()
-                .ToTable("Countrys");
+            modelBuilder.Entity<Professor>()
+                .ToTable("Professores");
 
-            modelBuilder.Entity<Country>()
+            modelBuilder.Entity<Professor>()
                 .HasKey(x => x.Id);
 
-            modelBuilder.Entity<Country>()
-                .Property(x => x.Id)
-                .UseIdentityColumn();
-
-            modelBuilder.Entity<Country>()
-                .Property(x => x.CountryName)
-                .HasColumnType("varchar(50)")
-                .IsRequired();
-
-            modelBuilder.Entity<Country>()
-                .HasMany(x => x.StudentsAddress)
-                .WithOne(x => x.Countrys);
-
-            #endregion
-
-            //--------------------------------------//
-
-            #region TEACHER
-
-            modelBuilder.Entity<Teacher>()
-                .ToTable("Teachers");
-
-            modelBuilder.Entity<Teacher>()
-                .HasKey(x => x.Id);
-
-            modelBuilder.Entity<Teacher>()
+            modelBuilder.Entity<Professor>()
                 .Property(x => x.Id)
                 .HasColumnName("Id")
                 .UseIdentityColumn();
 
-            modelBuilder.Entity<Teacher>()
-                .Property(x => x.FullName)
-                .HasColumnName("FullName")
+            modelBuilder.Entity<Professor>()
+                .Property(x => x.NomeCompleto)
+                .HasColumnName("NomeCompleto")
                 .IsRequired();
 
-            modelBuilder.Entity<Teacher>()
+            modelBuilder.Entity<Professor>()
                 .Property(x => x.Rg)
                 .HasColumnName("Rg")
                 .IsRequired();
 
-            modelBuilder.Entity<Teacher>()
+            modelBuilder.Entity<Professor>()
                 .Property(x => x.Cpf)
                 .HasColumnName("Cpf")
                 .IsRequired();
 
-            modelBuilder.Entity<Teacher>()
-                .Property(x => x.BirthDate)
-                .HasColumnName("BirthDate")
+            modelBuilder.Entity<Professor>()
+                .Property(x => x.DataNascimento)
+                .HasColumnName("DataNascimento")
                 .HasColumnType("date")
                 .IsRequired();
 
-            modelBuilder.Entity<Teacher>()
+            modelBuilder.Entity<Professor>()
                .Property(x => x.CreatAt)
                .HasColumnName("CreatAt")
                .HasColumnType("datetime")
                .IsRequired();
 
-            modelBuilder.Entity<Teacher>()
+            modelBuilder.Entity<Professor>()
                .Property(x => x.UpdatAt)
                .HasColumnName("UpdatAt")
                .HasColumnType("datetime");
 
-            modelBuilder.Entity<Teacher>()
-                .HasMany(x => x.TeachersSubjects)
-                .WithOne(x => x.Teachers);
+            modelBuilder.Entity<Professor>()
+                .HasMany(x => x.ProfessorDisciplinas)
+                .WithOne(x => x.Professor);
 
             #endregion
 
             //--------------------------------------//
 
-            #region TEACHERSSUBJECTS
+            #region PROFESSOR DISCIPLINA
 
-            modelBuilder.Entity<TeacherSubject>()
-                .ToTable("TeacherSubjects");
+            modelBuilder.Entity<ProfessorDisciplina>()
+                .ToTable("ProfessorDisciplinas");
 
-            modelBuilder.Entity<TeacherSubject>()
-                .Property(x => x.SubjectId)
-                .HasColumnName("SubjectId");
+            modelBuilder.Entity<ProfessorDisciplina>()
+                .Property(x => x.DisciplinaId)
+                .HasColumnName("DisciplinaId");
 
-            modelBuilder.Entity<TeacherSubject>()
-                  .HasOne(x => x.Subjects)
-                  .WithMany(x => x.TeachersSubjects);
+            modelBuilder.Entity<ProfessorDisciplina>()
+                  .HasOne(x => x.Disciplina)
+                  .WithMany(x => x.ProfessorDisciplinas);
 
-            modelBuilder.Entity<TeacherSubject>()
-                  .HasOne(x => x.Teachers)
-                  .WithMany(x => x.TeachersSubjects);
+            modelBuilder.Entity<ProfessorDisciplina>()
+                  .HasOne(x => x.Professor)
+                  .WithMany(x => x.ProfessorDisciplinas);
 
             #endregion
 
             //--------------------------------------//
 
-            #region STUDENTSSUBJECTS
+            #region ALUNO DISCIPLINA
 
-            modelBuilder.Entity<StudentSubject>()
-                .ToTable("StudentSubjects");
+            modelBuilder.Entity<AlunoDisciplina>()
+                .ToTable("AlunoDisciplinas");
 
-            modelBuilder.Entity<StudentSubject>()
+            modelBuilder.Entity<AlunoDisciplina>()
                 .HasKey(x => x.Id);
 
-            modelBuilder.Entity<StudentSubject>()
+            modelBuilder.Entity<AlunoDisciplina>()
                 .Property(x => x.Id)
                 .HasColumnName("Id")
                 .UseIdentityColumn();
 
-            modelBuilder.Entity<StudentSubject>()
-                .Property(x => x.SubjectId)
-                .HasColumnName("SubjectId")
+            modelBuilder.Entity<AlunoDisciplina>()
+                .Property(x => x.DisciplinaId)
+                .HasColumnName("DisciplinaId")
                 .HasColumnType("int");
 
-            modelBuilder.Entity<StudentSubject>()
-                .Property(x => x.StudentId)
-                .HasColumnName("StudentId")
+            modelBuilder.Entity<AlunoDisciplina>()
+                .Property(x => x.AlunoId)
+                .HasColumnName("AlunoId")
                 .HasColumnType("int");
 
-            modelBuilder.Entity<StudentSubject>()
-                .HasOne(x => x.Students)
-                .WithMany(x => x.StudentsSubjects);
+            modelBuilder.Entity<AlunoDisciplina>()
+                .HasOne(x => x.Aluno)
+                .WithMany(x => x.AlunoDisciplinas);
 
-            modelBuilder.Entity<StudentSubject>()
-                .HasOne(x => x.Subjects)
-                .WithMany(x => x.StudentsSubjects);
+            modelBuilder.Entity<AlunoDisciplina>()
+                .HasOne(x => x.Disciplina)
+                .WithMany(x => x.AlunoDisciplinas);
 
             #endregion
 
             //--------------------------------------//
 
-            #region STUDENTSERIE
+            #region ALUNO SERIE
 
-            modelBuilder.Entity<StudentSerie>()
-                .ToTable("StudentSeries");
+            modelBuilder.Entity<AlunoSerie>()
+                .ToTable("AlunoSeries");
 
-            modelBuilder.Entity<StudentSerie>()
+            modelBuilder.Entity<AlunoSerie>()
                 .HasKey(x => x.Id);
 
-            modelBuilder.Entity<StudentSerie>()
+            modelBuilder.Entity<AlunoSerie>()
                 .Property(x => x.Id)
                 .HasColumnName("Id")
                 .UseIdentityColumn();
 
-            modelBuilder.Entity<StudentSerie>()
-                .Property(x => x.StudentId)
-                .HasColumnName("StudentId");
+            modelBuilder.Entity<AlunoSerie>()
+                .Property(x => x.AlunoId)
+                .HasColumnName("AlunoId");
 
-            modelBuilder.Entity<StudentSerie>()
+            modelBuilder.Entity<AlunoSerie>()
                 .Property(x => x.SerieId)
                 .HasColumnName("SerieId");
 
-            modelBuilder.Entity<StudentSerie>()
-                .HasOne(x => x.Students)
-                .WithMany(x => x.StudentsSeries);
+            modelBuilder.Entity<AlunoSerie>()
+                .HasOne(x => x.Aluno)
+                .WithMany(x => x.AlunoSeries);
 
-            modelBuilder.Entity<StudentSerie>()
+            modelBuilder.Entity<AlunoSerie>()
                 .HasOne(x => x.Series)
-                .WithMany(x => x.StudentsSeries);
+                .WithMany(x => x.AlunoSeries);
 
             #endregion
 
             //--------------------------------------//
 
-            #region STUDENTS ADDRESS
+            #region ALUNO ENDERECO
 
-            modelBuilder.Entity<StudentAddress>()
-                .ToTable("StudentAddresses");
+            modelBuilder.Entity<AlunoEndereco>()
+                .ToTable("AlunoEnderecos");
 
-            modelBuilder.Entity<StudentAddress>()
-                .Property(x => x.Number)
-                .HasColumnType("varchar(10)")
-                .HasColumnName("Number")
-                .IsRequired();
-
-            modelBuilder.Entity<StudentAddress>()
-                .HasOne(x => x.Students)
-                .WithMany(x => x.StudentsAddress);
+            modelBuilder.Entity<AlunoEndereco>()
+                .HasOne(x => x.Aluno)
+                .WithMany(x => x.AlunoEnderecos);
 
 
-            modelBuilder.Entity<StudentAddress>()
-                .HasOne(x => x.States)
-                .WithMany(x => x.StudentsAddress);
+            modelBuilder.Entity<AlunoEndereco>()
+                .HasOne(x => x.Estado)
+                .WithMany(x => x.AlunoEnderecos);
 
 
-            modelBuilder.Entity<StudentAddress>()
-                .HasOne(x => x.Citys)
-                .WithMany(x => x.StudentsAddress);
+            modelBuilder.Entity<AlunoEndereco>()
+                .HasOne(x => x.Cidade)
+                .WithMany(x => x.AlunoEnderecos);
 
 
-            modelBuilder.Entity<StudentAddress>()
-                .HasOne(x => x.Address)
-                .WithMany(x => x.StudentsAddress);
-
-
-            modelBuilder.Entity<StudentAddress>()
-                .HasOne(x => x.Countrys)
-                .WithMany(x => x.StudentsAddress);
+            modelBuilder.Entity<AlunoEndereco>()
+                .HasOne(x => x.Endereco)
+                .WithMany(x => x.AlunoEnderecos);
             #endregion
 
             //--------------------------------------//

@@ -3,11 +3,11 @@ using ProjetoEscola.Application.DTO_s;
 
 namespace ProjetoEscola.Application.Validations
 {
-    public class CityDTOValidation : AbstractValidator<CityDTO>
+    public class CityDTOValidation : AbstractValidator<CidadeDTO>
     {
         public CityDTOValidation()
         {
-            RuleFor(x => x.CityName)
+            RuleFor(x => x.NomeCidade)
                 .NotEmpty()
                 .NotNull();
         }

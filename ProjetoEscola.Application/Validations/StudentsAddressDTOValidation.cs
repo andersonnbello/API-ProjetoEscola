@@ -3,27 +3,27 @@ using ProjetoEscola.Application.DTO_s;
 
 namespace ProjetoEscola.Application.Validations
 {
-    public class StudentsAddressDTOValidation : AbstractValidator<StudentsAddressDTO>
+    public class StudentsAddressDTOValidation : AbstractValidator<AlunoEnderecoDTO>
     {
         public StudentsAddressDTOValidation()
         {
-            RuleFor(x => x.AddressId)
+            RuleFor(x => x.EnderecoId)
                 .NotEmpty()
                 .NotNull();
 
-            RuleFor(x => x.StudentId)
+            RuleFor(x => x.AlunoId)
                 .NotEmpty()
                 .NotNull();
 
-            RuleFor(x => x.CityId)
+            RuleFor(x => x.CidadeId)
                 .NotEmpty()
                 .NotNull();
 
-            RuleFor(x => x.CountryId)
+            RuleFor(x => x.PaísId)
                 .NotEmpty()
                 .NotNull();
 
-            RuleFor(x => x.StateId)
+            RuleFor(x => x.EstadoId)
                 .NotEmpty()
                 .NotNull();
         }
